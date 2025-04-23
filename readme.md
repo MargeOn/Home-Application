@@ -24,6 +24,7 @@ Dự án mô phỏng ứng dụng Home thực tế ở mức đơn giản trên 
 
 - Backend C++: Ứng dụng được xử lí tương tác thông qua các lớp ở C++ và được thể hiện mối quan hệ như sau: 
 
+- ![](Image/HomeApp_ClassDiagram.png)
 
 ## Chức năng:
 - Hiển thị thông tin ngày và giờ
