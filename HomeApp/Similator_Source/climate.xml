@@ -1,0 +1,38 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="local.Climate">
+    <method name="getTemp_driver">
+      <arg type="d" direction="out"/>
+    </method>
+    <method name="getTemp_passenger">
+      <arg type="d" direction="out"/>
+    </method>
+    <method name="getFan_speed">
+      <arg type="i" direction="out"/>
+    </method>
+    <method name="getDriverWind_mode">
+      <arg type="i" direction="out"/>
+    </method>
+    <method name="getPassengerWind_mode">
+      <arg type="i" direction="out"/>
+    </method>
+    <method name="getAuto_mode">
+      <arg type="i" direction="out"/>
+    </method>
+    <method name="getSync_mode">
+      <arg type="i" direction="out"/>
+    </method>
+    <method name="setData">
+      <arg name="temp_driver" type="d" direction="in"/>
+      <arg name="temp_passenger" type="d" direction="in"/>
+      <arg name="fan_speed" type="i" direction="in"/>
+      <arg name="driver_wind_mode" type="i" direction="in"/>
+      <arg name="passenger_wind_mode" type="i" direction="in"/>
+      <arg name="auto_mode" type="i" direction="in"/>
+      <arg name="sync_mode" type="i" direction="in"/>
+      <annotation name="org.qtproject.QtDBus.QtTypeName.In4" value="QVector&lt;bool&gt;"/>
+    </method>
+    <signal name="dataChanged">
+    </signal>
+  </interface>
+</node>

@@ -1,0 +1,57 @@
+<APPLICATIONS>
+        <APP ID="001">
+                <TITLE>STR_Climate</TITLE>
+                <URL>qrc:/App/Climate/Climate.qml</URL>
+                <ICON_PATH>qrc:/Img/HomeScreen/btn_home_menu_climate</ICON_PATH>
+        </APP>
+        <APP ID="002">
+                <TITLE>STR_Settings</TITLE>
+                <URL>qrc:/App/Settings/Settings.qml</URL>
+                <ICON_PATH>qrc:/Img/HomeScreen/btn_home_menu_settings</ICON_PATH>
+        </APP>
+        <APP ID="003">
+                <TITLE>STR_Camera</TITLE>
+                <URL>qrc:/App/Camera/Camera.qml</URL>
+                <ICON_PATH>qrc:/Img/HomeScreen/btn_home_menu_camera</ICON_PATH>
+        </APP>
+        <APP ID="004">
+                <TITLE>STR_Map</TITLE>
+                <URL>qrc:/App/Map/Map.qml</URL>
+                <ICON_PATH>qrc:/Img/HomeScreen/btn_home_menu_map</ICON_PATH>
+        </APP>
+        <APP ID="005">
+                <TITLE>STR_Calendar</TITLE>
+                <URL>qrc:/App/Calendar/Calendar.qml</URL>
+                <ICON_PATH>qrc:/Img/HomeScreen/btn_home_menu_calendar</ICON_PATH>
+        </APP>
+        <APP ID="006">
+                <TITLE>STR_Folder</TITLE>
+                <URL>qrc:/App/Folder/Folder.qml</URL>
+                <ICON_PATH>qrc:/Img/HomeScreen/btn_home_menu_folder</ICON_PATH>
+        </APP>
+        <APP ID="007">
+                <TITLE>STR_Weather</TITLE>
+                <URL>qrc:/App/Weather/Weather.qml</URL>
+                <ICON_PATH>qrc:/Img/HomeScreen/btn_home_menu_weather</ICON_PATH>
+        </APP>
+        <APP ID="008">
+                <TITLE>STR_Phone</TITLE>
+                <URL>qrc:/App/Phone/Phone.qml</URL>
+                <ICON_PATH>qrc:/Img/HomeScreen/btn_home_menu_phone</ICON_PATH>
+        </APP>
+        <APP ID="009">
+                <TITLE>STR_Video</TITLE>
+                <URL>qrc:/App/Video/Video.qml</URL>
+                <ICON_PATH>qrc:/Img/HomeScreen/btn_home_menu_video</ICON_PATH>
+        </APP>
+        <APP ID="010">
+                <TITLE>STR_Media</TITLE>
+                <URL>qrc:/App/Media/Media.qml</URL>
+                <ICON_PATH>qrc:/Img/HomeScreen/btn_home_menu_media</ICON_PATH>
+        </APP>
+        <APP ID="011">
+                <TITLE>STR_Radio</TITLE>
+                <URL>qrc:/App/Radio/Radio.qml</URL>
+                <ICON_PATH>qrc:/Img/HomeScreen/btn_home_menu_radio</ICON_PATH>
+        </APP>
+</APPLICATIONS>
