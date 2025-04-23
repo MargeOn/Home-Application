@@ -17,9 +17,10 @@ Dự án mô phỏng ứng dụng Home thực tế ở mức đơn giản trên 
 - Thay đổi thứ tự các App và cập nhật thứ tự ở các App trong QAstractListModel
 - Làm việc với IPC: DBus để truyển nhận dữ liệu trong Climate Application
 
-## Cấu trúc hệ thống có:
-
 ## Cấu trúc chương trình: 
+- UI: Sử dụng mô hình MVC để thiết kế UI
+- Backend C++: Ứng dụng được xử lí tương tác thông qua các lớp ở C++ và được thể hiện mối quan hệ như sau: 
+
 
 ## Chức năng:
 - Hiển thị thông tin ngày và giờ
@@ -34,24 +35,24 @@ Dự án mô phỏng ứng dụng Home thực tế ở mức đơn giản trên 
 ### 1. Hiển thị thông tin ngày và giờ:
 - Nếu có thông tin thì thực hiện đọc file và đưa dữ liệu vào chương trình để thực hiện cập nhật và hiển thị dữ liệu theo các chức năng:
 
-![](Image/updatefile.png)
+![](Image/Statusbar_EN.png)
 
 
 ### 2. Hiển thị thông tin của app lên các Widget:
 - Các ứng dụng Map, Climate và Media được mở trong Home sẽ được hiển thị thông tin trên Widget để user có thể theo dõi hoạt động của ứng dụng 
 
-![](Image/Menuinput.png)
+![](Image/Widget.png)
 
 ### 3. Mở các ứng dụng thông qua click và shortcut:
 - Ứng dụng Home có các ứng dụng cần thiết như Climate, Settings, Media,... và ta có thể mở nó bằng cách click chuột hoặc bằng shortcut trên bàn phím
     
-![](Image/Menuoutput.png)
+* Tính năng thể hiện trong tài liệu UX
 
 
 ### 4. Điều khiển focus qua các widget và app bằng hard key:
 - Focus là sự thể hiện qua click ứng dụng hoặc thao tác bàn phím để mở ứng dụng đó. 
 
-![](Image/Menutimkiem.png)
+* Tính năng thể hiện trong tài liệu UX
 
 
 ### 5. Media App - hiển thị danh sách nhạc và phát nhạc: 
