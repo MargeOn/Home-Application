@@ -19,6 +19,9 @@ Dự án mô phỏng ứng dụng Home thực tế ở mức đơn giản trên 
 
 ## Cấu trúc chương trình: 
 - UI: Sử dụng mô hình MVC để thiết kế UI
+
+![](Image/MVC.png)
+
 - Backend C++: Ứng dụng được xử lí tương tác thông qua các lớp ở C++ và được thể hiện mối quan hệ như sau: 
 
 
@@ -54,15 +57,24 @@ Dự án mô phỏng ứng dụng Home thực tế ở mức đơn giản trên 
 
 * Tính năng thể hiện trong tài liệu UX
 
+### 5. Climate app: giao tiếp với DBus để lấy dữ liệu từ Climate Simulator
 
-### 5. Media App - hiển thị danh sách nhạc và phát nhạc: 
+- Climate Simulator App:
+
+![](Image/ClimateSimulator.png)
+
+- Dữ liệu điều hòa của Climate Simulator App sẽ được emit lên DBus và Climate App sẽ nhận được dữ liệu của Climate Simulator qua DBus.
+
+![](Image/DBus.png)
+
+### 6. Media App - hiển thị danh sách nhạc và phát nhạc: 
 - Media App là một ứng dụng phát nhạc có các tính năng cơ bản: phát nhạc, lặp lại bài hát, phát ngẫu nhiên và lựa chọn bài hát.
   
 ![](Image/MediaScreen_CloseDrawer.png)
 
 ![](Image/MediaScreen.png)
 
-### 6. Settings app - thay đổi ngôn ngữ cho toàn bộ hệ thống: 
+### 7. Settings app - thay đổi ngôn ngữ cho toàn bộ hệ thống: 
 
 ![](Image/settingScreen.png)
 
