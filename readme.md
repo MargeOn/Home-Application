@@ -1,105 +1,72 @@
-# PROJECT: HOME APPLICATION 
+# PROJECT: MediaPlayer Application
 
-Dự án mô phỏng ứng dụng Home thực tế ở mức đơn giản trên màn hình người lái trong ô tô.
-
-![](Image/homeScreen.png)
+- Project này sẽ thực hiện các chức năng chơi nhạc để mô phỏng hệ thống giải trí trên ô tô
+  
+![](ImageMediaApp/Drawer_and_kr.png)
 
 ### Thông tin về source code:
 
-- Viết bằng ngôn ngữ C++, Qt/QML 
-- Build trên hệ điều hành Linux (Ubuntu 18.04.6) và Qt
+- Viết bằng ngôn ngữ Qt/QML và C++
+- Version Qt 5.14.2 (MinGW x64)
+- Build trên Linux (Ubuntu 18.04.6) 
 
 ### Project bao gồm các kiến thức đã sử dụng như:
 
-- Lập trình hướng đối tượng
-- Lập trình trên framework Qt và QML
-- Làm việc với QMediaPlayer, QMediaPlaylist, QTranslation, QDocDocument, QLocale, QDate, QTime.
-- Thay đổi thứ tự các App và cập nhật thứ tự ở các App trong QAstractListModel
-- Làm việc với IPC: DBus để truyển nhận dữ liệu trong Climate Application
+- Sử dụng mô hình Model View của Qt 
+- Sử dụng ListView, PathView, ListModel
+- Cách giao tiếp giữa C++ và QML
+- Sử dụng đối tượng QMediaPlayer để thực hiện các chức năng chơi nhạc
+- Làm việc với thư viện bên thứ ba: Taglib
+- Xây dựng model bằng QAbstractListModel
+- Sử dụng đối tượng Drawer của Qt Quick Control để hiển thị danh sách bài hát
+- Sử dụng ComboBox của Qt Quick Control để lựa chọn ngôn ngữ
+- Hỗ trợ đa ngôn ngữ cho ứng dụng Qt bằng QTranslation
 
 ## Cấu trúc chương trình: 
-- UI: Sử dụng mô hình MVC để thiết kế UI
+- Chương trình được xây dựng giao diện bằng QML và sử dụng ngôn ngữ C++ để xử lí các thao tác, tính năng cho phần backend
+- Phần giao diện được chia thành 3 component chính:
+  + AppHeader: bao gồm tên ứng dụng, button đóng - mở playlist và comboBox lựa chọn ngôn ngữ
+  + Playlist: hiển thị danh sách bài hát có trong ứng dụng và thao tác chọn bài hát
+  + MediaInfo: hiển thị các thông tin bài hát đang được chơi và các thao tác chơi/dừng, lặp lại bài hát, ...
+- Phần C++: sử dụng OOP, binding property, kết nối các signal - slot để xử lí các tính năng của ứng dụng
 
-![](Image/MVC.png)
-
-- Backend C++: Ứng dụng được xử lí tương tác thông qua các lớp ở C++ và được thể hiện mối quan hệ như sau: 
-
-![](Image/HomeApp_ClassDiagram.png)
+![](ImageMediaApp/MediaApp.png)
 
 ## Chức năng:
-- Hiển thị thông tin ngày và giờ
-- Hiển thị thông tin của app lên các Widget
-- Mở các ứng dụng thông qua click và shortcut
-- Điều khiển focus qua các widget và app
-- Map app: hiển thị bản đồ
-- Climate app: giao tiếp với DBus để lấy dữ liệu từ Climate Simulator
-- Media app: hiển thị danh sách nhạc và phát nhạc
-- Settings app: thay đổi ngôn ngữ cho toàn bộ hệ thống và điều chỉnh âm thanh hệ thống 
+- Phát nhạc và dừng nhạc
+- Chuyển tiếp bài hát
+- Chức năng phát ngẫu nhiên - shuffle
+- Chức năng lặp lại bài hát hiện tại - repeat
+- Chức năng hiển thị đóng, mở danh sách bài hát
+- Chức năng lựa chọn và hiển thị đa ngôn ngữ: Anh, Việt, Hàn, Nhật
 
-### 1. Hiển thị thông tin ngày và giờ:
-- Nếu có thông tin thì thực hiện đọc file và đưa dữ liệu vào chương trình để thực hiện cập nhật và hiển thị dữ liệu theo các chức năng:
+### 1. Giao diện ứng dụng:
+- Giao diện hiển thị ban đầu sẽ không hiển thị danh sách bài hát:
+  
+![](ImageMediaApp/background_version2.png)
 
-![](Image/Statusbar_EN.png)
+### 2. Chức năng hiển thị đóng, mở danh sách bài hát:
+- Hiển thị danh sách bài hát:
 
+![](ImageMediaApp/Drawer.png)
+  
+- Lựa chọn bài hát trên danh sách bài hát:
 
-### 2. Hiển thị thông tin của app lên các Widget:
-- Các ứng dụng Map, Climate và Media được mở trong Home sẽ được hiển thị thông tin trên Widget để user có thể theo dõi hoạt động của ứng dụng 
+![](ImageMediaApp/luachonbaihat.png)
 
-![](Image/Widget.png)
-
-### 3. Mở các ứng dụng thông qua click và shortcut:
-- Ứng dụng Home có các ứng dụng cần thiết như Climate, Settings, Media,... và ta có thể mở nó bằng cách click chuột hoặc bằng shortcut trên bàn phím
+### 3. Chức năng lựa chọn và hiển thị đa ngôn ngữ: 
+- Lựa chọn các ngôn ngữ trong ứng dụng:
     
-* Tính năng thể hiện trong tài liệu UX
+![](ImageMediaApp/ComboBox_version2.png)
 
-
-### 4. Điều khiển focus qua các widget và app bằng hard key:
-- Focus là sự thể hiện qua click ứng dụng hoặc thao tác bàn phím để mở ứng dụng đó. 
-
-* Tính năng thể hiện trong tài liệu UX
-
-### 5. Climate app: giao tiếp với DBus để lấy dữ liệu từ Climate Simulator
-
-- Climate Simulator App:
-
-![](Image/ClimateSimulator.png)
-
-- Dữ liệu điều hòa của Climate Simulator App sẽ được emit lên DBus và Climate App sẽ nhận được dữ liệu của Climate Simulator qua DBus.
-
-![](Image/DBus.png)
-
-### 6. Media App - hiển thị danh sách nhạc và phát nhạc: 
-- Media App là một ứng dụng phát nhạc có các tính năng cơ bản: phát nhạc, lặp lại bài hát, phát ngẫu nhiên và lựa chọn bài hát.
+- Lựa chọn tiếng Việt:
   
-![](Image/MediaScreen_CloseDrawer.png)
+![](ImageMediaApp/vn.png)
 
-![](Image/MediaScreen.png)
-
-### 7. Settings app - thay đổi ngôn ngữ cho toàn bộ hệ thống: 
-
-![](Image/settingScreen.png)
-
-- Lựa chọn ngôn ngữ muốn hiển thị:
+- Lựa chọn tiếng Hàn:
   
-![](Image/SelectLanguage.png)
+![](ImageMediaApp/kr_version2.png)
 
-- Tiếng Việt: Các text ở Home, ngày tháng hiển thị và các App khác sẽ hiển thị bằng tiếng Việt
-
-![](Image/VN_setting.png)
-
-![](Image/VN_Home.png)
-
-- Tiếng Hàn: Các text ở Home, ngày tháng hiển thị và các App khác sẽ hiển thị bằng tiếng Hàn
-
-![](Image/Kr_setting.png)
-
-![](Image/KR_Home.png)
-
-- Tiếng Nhật: Các text ở Home, ngày tháng hiển thị và các App khác sẽ hiển thị bằng tiếng Nhật
-
-![](Image/JP_Setting.png)
-
-![](Image/JP_Home.png)
-
-
-
+- Lựa chọn tiếng Nhật:
+  
+![](ImageMediaApp/jp.png)
